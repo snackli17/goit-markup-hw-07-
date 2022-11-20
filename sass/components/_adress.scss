@@ -1,0 +1,24 @@
+.address__item {
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+
+    &:not(:last-child) {
+        margin-bottom: 9px;
+    }
+}
+
+.address__link {
+    color: $footer-color;
+    font-style: normal;
+    @include transitionM(color);
+
+    &--difference {
+        color: $secondary-logo-color;
+        @include transitionM(color);
+    }
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}

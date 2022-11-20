@@ -1,0 +1,219 @@
+.modal {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: $overlay-modal-color;
+    opacity: 1;
+    @include transitionM(opacity);
+    @include transitionM(visibility);
+}
+
+.modal.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal.is-hidden .form {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.form-modal {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: right;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 528px;
+    min-height: 581px;
+    background-color: $secondary-logo-color;
+    @include transitionM(transform);
+}
+
+.form-modal__button {
+    position: absolute;
+    display: inline-flex;
+    top: 8px;
+    right: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $modal-button-border;
+    border-radius: 50%;
+    color: $black-color;
+    background-color: $secondary-logo-color;
+    @include transitionM(color);
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.form-modal__icon {
+    fill: currentColor;
+}
+
+.data-form {
+    width: 448px;
+    margin: 0 auto;
+}
+
+.data-form__title {
+    margin: 40px 0 30px 0px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $page-text-color;
+}
+
+.data-form__input {
+    padding: 0;
+    padding-left: 42px;
+    width: 448px;
+    height: 40px;
+    border: 1px solid $input-field;
+    border-radius: 4px;
+    fill: $black-color;
+    outline: none;
+    @include transitionM(border);
+    @include transitionM(fill);
+
+    &:focus {
+        border-color: $accent-color;
+    }
+}
+
+.data-form__input:focus+.data-form__icon {
+    fill: $accent-color;
+}
+
+.data-form__field {
+    position: relative;
+    margin-bottom: 28px;
+    color: $page-text-color;
+}
+
+.data-form__label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-20px);
+    margin-bottom: 4px;
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: $secondary-text-color;
+}
+
+.data-form__checkbox-label {
+    cursor: pointer;
+}
+
+.data-form__icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: currentColor;
+}
+
+.data-form__feedback {
+    display: block;
+    font-family: $font-family;
+    padding: 12px 16px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    border: 1px solid $input-field;
+    border-radius: 4px;
+    outline: none;
+    @include transitionM(border);
+
+    &:focus {
+        border-color: $accent-color;
+    }
+}
+
+.data-form__checkbox {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.data-form__checkbox-text {
+    display: inline-block;
+    margin-right: 9px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid $black-color;
+    background-color: transparent;
+    border-radius: 2px;
+    @include transitionM(border);
+    @include transitionM(background-color);
+}
+
+.data-form__link {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: $accent-color;
+}
+
+.data-form__checkbox:checked+.data-form__checkbox-text {
+    background-image: url(../images/check.svg);
+    border: 2px solid $accent-color;
+    background-color: $accent-color;
+    background-size: contain;
+    background-origin: border-box;
+    border-radius: 2px;
+}
+
+.data-form__checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-form__button {
+    text-align: center;
+}
+
+.data-form__send-button {
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    min-width: 200px;
+    padding: 10px 52px;
+    background-color: $accent-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    color: $secondary-logo-color;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 700;
+    font-family: $font-family;
+    @include transitionM(background-color);
+
+    &:hover,
+    &:focus {
+        background-color: $button-hero-active;
+    }
+
+}
